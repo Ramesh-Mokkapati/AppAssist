@@ -1,0 +1,95 @@
+# Builds AppAssist on every pull request and push to main. A push to main also tags the next version
+# (scripts\next_version.ps1: feat -> minor, "!" or BREAKING CHANGE -> major, else patch) and publishes
+# a GitHub release with the zipped programs. "[skip release]" in the commit message builds without releasing.
+name: Build and release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Runs on main queue one after another, so each one sees the tag the previous one made.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: windows-2022   # VS 2022 with MFC; windows-latest is VS 2026, which the "Visual Studio 17 2022" generator does not match
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      release: ${{ steps.version.outputs.release }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0   # all tags and history, for the next version
+
+      - name: Work out the next version
+        id: version
+        shell: pwsh
+        run: ./scripts/next_version.ps1
+
+      - name: Cache third-party sources
+        uses: actions/cache@v6
+        with:
+          path: |
+            third_party/llama.cpp
+            third_party/nlohmann
+          key: third-party-${{ hashFiles('scripts/fetch_deps.ps1') }}
+
+      - name: Build
+        shell: pwsh
+        run: ./scripts/build.ps1 -Config Release -Version ${{ steps.version.outputs.version }} -BuildNumber ${{ github.run_number }}
+
+      - name: Smoke test
+        shell: pwsh
+        run: ./scripts/smoke_test.ps1 -Version ${{ steps.version.outputs.version }}
+
+      - name: Package
+        id: package
+        shell: pwsh
+        run: |
+          $name = "AppAssist-${{ steps.version.outputs.version }}-win-x64"
+          $stage = Join-Path $env:RUNNER_TEMP $name
+          New-Item -ItemType Directory $stage | Out-Null
+          Copy-Item build/bin/Release/AppAssist.exe, build/bin/Release/AppAssistCli.exe, config/models.json, README.md $stage
+          New-Item -ItemType Directory dist | Out-Null
+          Compress-Archive -Path "$stage/*" -DestinationPath "dist/$name.zip"
+          $hash = (Get-FileHash "dist/$name.zip" -Algorithm SHA256).Hash.ToLower()
+          Set-Content "dist/$name.zip.sha256" "$hash  $name.zip" -Encoding ascii -NoNewline
+          Get-ChildItem dist | Format-Table Name, Length
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: AppAssist-${{ steps.version.outputs.version }}-win-x64
+          path: dist/
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && needs.build.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # create the tag and the release
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: AppAssist-${{ needs.build.outputs.version }}-win-x64
+          path: dist
+
+      - name: Tag and publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ needs.build.outputs.tag }}
+        run: |
+          gh release create "$TAG" dist/* \
+            --target "$GITHUB_SHA" \
+            --title "AppAssist $TAG" \
+            --generate-notes \
+            --notes "Windows x64. Unzip and run AppAssist.exe (GUI) or AppAssistCli.exe. Needs the Microsoft Visual C++ 2015-2022 Redistributable (x64), which includes the MFC DLLs. Models are not included: use Model Advisor or AppAssistCli download."

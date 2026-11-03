@@ -1,0 +1,8 @@
+﻿2026-10-31 13:34:42.905 INFO  scheduler: running nightly diagnosis
+2026-10-31 13:34:42.946 ERROR appassist: Error: Cannot open C:\Diagnostics\nightly\missing.kdb (Windows error 3: The system cannot find the path specified.)
+2026-10-31 13:34:42.947 INFO  scheduler: running nightly diagnosis (retry)
+2026-10-31 13:34:42.965 ERROR appassist: Error: Cannot open C:\Diagnostics\nightly\missing.kdb (Windows error 3: The system cannot find the path specified.)
+2026-10-31 13:34:42.966 INFO  scheduler: running weekly diagnosis
+2026-10-31 13:34:42.986 ERROR appassist: Error: The knowledge base file is damaged or not valid JSON: [json.exception.parse_error.101] parse error at line 2, column 1: syntax error while parsing object key - unexpected end of input; expected string literal
+2026-10-31 13:34:42.987 INFO  scheduler: running model check
+2026-10-31 13:34:43.011 ERROR appassist: Error: Model file not found: D:\models\llama-3.2-3b.gguf

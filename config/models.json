@@ -1,0 +1,230 @@
+{
+  "format": "appassist-models",
+  "version": 1,
+
+  "models": [
+    {
+      "id": "qwen2.5-coder-1.5b",
+      "name": "Qwen2.5-Coder 1.5B Instruct (Q4_K_M)",
+      "file": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+      "size": 1117320768,
+      "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+      "params_b": 1.5,
+      "active_params_b": 1.5,
+      "tier": 1,
+      "kv_cache_mb_8k": 250,
+      "license": "Apache-2.0",
+      "summary": "Starter: small and fast; good for small code bases, shallower explanations."
+    },
+    {
+      "id": "qwen2.5-coder-3b",
+      "name": "Qwen2.5-Coder 3B Instruct (Q4_K_M)",
+      "file": "qwen2.5-coder-3b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct-GGUF/resolve/main/qwen2.5-coder-3b-instruct-q4_k_m.gguf",
+      "size": 2104932800,
+      "sha256": "724fb256bec1ff062b2f65e4569e871ad2e95ab2a3989723d1769c54294730b7",
+      "params_b": 3.1,
+      "active_params_b": 3.1,
+      "tier": 1,
+      "kv_cache_mb_8k": 300,
+      "license": "Qwen Research (non-commercial)",
+      "summary": "Between the 1.5B and the 7B: noticeably better than the 1.5B and still fast on 8 GB PCs. Its licence does not allow commercial use."
+    },
+    {
+      "id": "phi-4-mini",
+      "name": "Phi-4-mini 3.8B Instruct (Q4_K_M)",
+      "file": "microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF/resolve/main/microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+      "size": 2491874688,
+      "sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "params_b": 3.8,
+      "active_params_b": 3.8,
+      "tier": 1,
+      "kv_cache_mb_8k": 1024,
+      "license": "MIT",
+      "summary": "Microsoft's small general model. Not offered for log diagnosis: in testing it ignored the report format and cited evidence that does not exist."
+    },
+    {
+      "id": "gemma-3-4b",
+      "name": "Gemma 3 4B Instruct (Q4_K_M)",
+      "file": "gemma-3-4b-it-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q4_K_M.gguf",
+      "size": 2489894016,
+      "sha256": "04a43a22e8d2003deda5acc262f68ec1005fa76c735a9962a8c77042a74a7d19",
+      "params_b": 4.3,
+      "active_params_b": 4.3,
+      "tier": 1,
+      "kv_cache_mb_8k": 1100,
+      "license": "Gemma Terms of Use",
+      "summary": "Google's small general model: clear, readable explanations of what went wrong."
+    },
+    {
+      "id": "qwen2.5-coder-7b",
+      "name": "Qwen2.5-Coder 7B Instruct (Q4_K_M)",
+      "file": "qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "size": 4683073536,
+      "sha256": "509287f78cb4d4cf6b3843734733b914b2c158e43e22a7f4bf5e963800894d3c",
+      "params_b": 7.6,
+      "active_params_b": 7.6,
+      "tier": 2,
+      "kv_cache_mb_8k": 500,
+      "license": "Apache-2.0",
+      "summary": "Standard: clearly better reasoning about code; a good default for medium code bases."
+    },
+    {
+      "id": "llama-3.1-8b",
+      "name": "Llama 3.1 8B Instruct (Q4_K_M)",
+      "file": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "size": 4920739232,
+      "sha256": "7b064f5842bf9532c91456deda288a1b672397a54fa729aa665952863033557c",
+      "params_b": 8.0,
+      "active_params_b": 8.0,
+      "tier": 2,
+      "kv_cache_mb_8k": 1024,
+      "license": "Llama 3.1 Community License",
+      "summary": "Meta's widely used general model; a different view from the Qwen coders at the same size."
+    },
+    {
+      "id": "gemma-3-12b",
+      "name": "Gemma 3 12B Instruct (Q4_K_M)",
+      "file": "gemma-3-12b-it-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf",
+      "size": 7300778336,
+      "sha256": "15b8fd9d8672cd4240c178c217ca781409291f34e353d2e913b29c7602ceb3ff",
+      "params_b": 12.2,
+      "active_params_b": 12.2,
+      "tier": 2,
+      "kv_cache_mb_8k": 3072,
+      "license": "Gemma Terms of Use",
+      "summary": "Strong general reasoning for explaining failures; dense, so slower than the 7B and 8B models."
+    },
+    {
+      "id": "deepseek-coder-v2-lite",
+      "name": "DeepSeek-Coder-V2-Lite 16B Instruct (Q4_K_M)",
+      "file": "DeepSeek-Coder-V2-Lite-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Instruct-GGUF/resolve/main/DeepSeek-Coder-V2-Lite-Instruct-Q4_K_M.gguf",
+      "size": 10364416768,
+      "sha256": "603bd3f8a0281d16571da7c08bd661ee17ff0d1be6fcbd1b42242da257ef0bb8",
+      "params_b": 15.7,
+      "active_params_b": 2.4,
+      "tier": 2,
+      "kv_cache_mb_8k": 2200,
+      "license": "DeepSeek License",
+      "summary": "Mixture-of-experts coder: about 2.4B parameters work per word, so it is fast on a CPU, with 7B-class code skills."
+    },
+    {
+      "id": "qwen2.5-coder-14b",
+      "name": "Qwen2.5-Coder 14B Instruct (Q4_K_M)",
+      "file": "qwen2.5-coder-14b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct-GGUF/resolve/main/qwen2.5-coder-14b-instruct-q4_k_m.gguf",
+      "size": 8988110272,
+      "sha256": "c1e659736d89ac1065fb495330fb824d94001974a4bfa78e7270e43476a8d940",
+      "params_b": 14.8,
+      "active_params_b": 14.8,
+      "tier": 3,
+      "kv_cache_mb_8k": 1600,
+      "license": "Apache-2.0",
+      "summary": "Large, dense: strong reasoning but every answer uses all 14B parameters, so it is slow on a CPU."
+    },
+    {
+      "id": "phi-4",
+      "name": "Phi-4 14B (Q4_K_M)",
+      "file": "phi-4-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/phi-4-GGUF/resolve/main/phi-4-Q4_K_M.gguf",
+      "size": 9053114816,
+      "sha256": "009aba717c09d4a35890c7d35eb59d54e1dba884c7c526e7197d9c13ab5911d9",
+      "params_b": 14.7,
+      "active_params_b": 14.7,
+      "tier": 3,
+      "kv_cache_mb_8k": 1600,
+      "license": "MIT",
+      "summary": "Microsoft's 14B reasoning model; strong at working out causes, but slow on a CPU like other dense 14B models."
+    },
+    {
+      "id": "qwen3-coder-30b-a3b",
+      "name": "Qwen3-Coder 30B-A3B Instruct (Q4_K_M)",
+      "file": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF/resolve/main/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+      "size": 18556689568,
+      "sha256": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+      "params_b": 30.5,
+      "active_params_b": 3.3,
+      "tier": 3,
+      "kv_cache_mb_8k": 800,
+      "license": "Apache-2.0",
+      "summary": "Large, mixture-of-experts: the strongest here, yet only ~3B parameters work per word, so it answers about as fast as a small model. Needs plenty of RAM."
+    },
+    {
+      "id": "qwen2.5-coder-32b",
+      "name": "Qwen2.5-Coder 32B Instruct (Q4_K_M)",
+      "file": "Qwen2.5-Coder-32B-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/Qwen2.5-Coder-32B-Instruct-GGUF/resolve/main/Qwen2.5-Coder-32B-Instruct-Q4_K_M.gguf",
+      "size": 19851336672,
+      "sha256": "8e2fd78ff55e7cdf577fda257bac2776feb7d73d922613caf35468073807e815",
+      "params_b": 32.8,
+      "active_params_b": 32.8,
+      "tier": 3,
+      "kv_cache_mb_8k": 2048,
+      "license": "Apache-2.0",
+      "summary": "The strongest dense coder here, best for careful conversions; every word uses all 32B parameters, so it is very slow on a CPU. Needs 32 GB+."
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "log-diagnosis",
+      "name": "Log root-cause diagnosis",
+      "workload": "knowledge base",
+      "context_tokens": 8192,
+      "no_workload_hint": "Build or open a knowledge base and the advisor will tell you whether your code base is large enough for a bigger model to be worth downloading.",
+      "tiers": [
+        {
+          "label": "small",
+          "below": { "lines": 15000, "symbols": 1500 },
+          "explain": "A small model can follow a code base of this size.",
+          "prefer": [ "qwen2.5-coder-1.5b", "qwen2.5-coder-3b", "gemma-3-4b" ]
+        },
+        {
+          "label": "medium",
+          "below": { "lines": 150000, "symbols": 15000 },
+          "explain": "At this size a 7B model reasons noticeably better about how the parts fit together.",
+          "prefer": [ "qwen2.5-coder-7b", "deepseek-coder-v2-lite", "llama-3.1-8b", "gemma-3-12b", "qwen2.5-coder-3b", "qwen2.5-coder-1.5b" ]
+        },
+        {
+          "label": "large",
+          "explain": "A large code base benefits from the strongest model this PC can run.",
+          "prefer": [ "qwen3-coder-30b-a3b", "qwen2.5-coder-32b", "qwen2.5-coder-14b", "phi-4", "deepseek-coder-v2-lite", "qwen2.5-coder-7b", "qwen2.5-coder-3b", "qwen2.5-coder-1.5b" ]
+        }
+      ]
+    },
+    {
+      "id": "code-conversion",
+      "name": "Code conversion (e.g. C++ to C#, Python 2 to 3)",
+      "workload": "source to convert",
+      "context_tokens": 16384,
+      "no_workload_hint": "Point the advisor at the source to convert and it will size the model to the largest file, which has to fit in the model's context together with its translation.",
+      "tiers": [
+        {
+          "label": "small",
+          "below": { "largest_file_lines": 300, "lines": 5000 },
+          "explain": "Short files convert well with a 7B model; a 1.5B model tends to drop details when rewriting code.",
+          "prefer": [ "qwen2.5-coder-7b", "deepseek-coder-v2-lite", "qwen3-coder-30b-a3b", "llama-3.1-8b" ]
+        },
+        {
+          "label": "medium",
+          "below": { "largest_file_lines": 1200 },
+          "explain": "Files of this length need a model that keeps the whole file consistent while rewriting it.",
+          "prefer": [ "qwen3-coder-30b-a3b", "qwen2.5-coder-32b", "qwen2.5-coder-14b", "deepseek-coder-v2-lite", "phi-4", "qwen2.5-coder-7b" ]
+        },
+        {
+          "label": "large",
+          "explain": "Some files are longer than the context window: they are converted in pieces, so the strongest model helps keep the pieces consistent.",
+          "prefer": [ "qwen3-coder-30b-a3b", "qwen2.5-coder-32b", "qwen2.5-coder-14b", "deepseek-coder-v2-lite", "phi-4", "qwen2.5-coder-7b" ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+2026-11-03 15:30:24.250 INFO  shipping - Shipping report starting for zone north
+Exception in thread "main" java.lang.IllegalArgumentException: shipping.max-parcels must be positive, got 0
+	at shipping.ShippingSettings$.from(ShippingSettings.scala:15)
+	at shipping.ShippingApp$.main(ShippingApp.scala:22)
+	at shipping.ShippingApp.main(ShippingApp.scala)
+2026-11-03 15:30:24.798 INFO  shipping - Shipping report starting for zone north
+2026-11-03 15:30:24.885 WARN  shipping - Parcel file not readable, retrying (attempt 1)
+2026-11-03 15:30:24.885 WARN  shipping - Parcel file not readable, retrying (attempt 2)
+2026-11-03 15:30:24.885 ERROR shipping - Giving up on zone north after 3 attempts
+java.nio.file.NoSuchFileException: C:\Shipping\parcels\north.parcels: parcel file for zone north not found
+	at shipping.ParcelStore.countParcels(ShippingSettings.scala:22)
+	at shipping.ShippingApp$.run(ShippingApp.scala:31)
+	at shipping.ShippingApp$.main(ShippingApp.scala:23)
+	at shipping.ShippingApp.main(ShippingApp.scala)

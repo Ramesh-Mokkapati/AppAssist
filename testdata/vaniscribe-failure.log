@@ -1,0 +1,43 @@
+2026-10-31 13:31:44,977 INFO    vaniscribe: VaniScribe starting, 1 file(s) queued
+2026-10-31 13:31:45,135 INFO    vaniscribe: Transcribing Episode-07.mp3 (0:00, Telugu)
+2026-10-31 13:31:45,170 ERROR   vaniscribe: Episode-07.mp3: could not read the audio: [in#0 @ 00000189974e7a80] Error opening input: No such file or directory
+Error opening input file C:\Recordings\Episode-07.mp3.
+Error opening input files: No such file or directory
+2026-10-31 13:31:45,170 INFO    vaniscribe: transcription finished: done=0 failed=1 cancelled=False error=None
+2026-10-31 13:31:45,179 ERROR   vaniscribe: English translation unavailable (attempt 1)
+Traceback (most recent call last):
+  File "C:\Work\Sprint-12\AppAssist\testdata\make_vaniscribe_failure_log.py", line 39, in <module>
+    NllbTranslator(r"C:\VaniScribe\models\nllb-200-600m-int8-missing")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 367, in __init__
+    self.tok = Tokenizer(model_dir)
+               ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 33, in __init__
+    with open(os.path.join(model_dir, "tokenizer.json"), encoding="utf-8") as fh:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\VaniScribe\\models\\nllb-200-600m-int8-missing\\tokenizer.json'
+2026-10-31 13:31:45,181 ERROR   vaniscribe: English translation unavailable (attempt 2)
+Traceback (most recent call last):
+  File "C:\Work\Sprint-12\AppAssist\testdata\make_vaniscribe_failure_log.py", line 39, in <module>
+    NllbTranslator(r"C:\VaniScribe\models\nllb-200-600m-int8-missing")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 367, in __init__
+    self.tok = Tokenizer(model_dir)
+               ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 33, in __init__
+    with open(os.path.join(model_dir, "tokenizer.json"), encoding="utf-8") as fh:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\VaniScribe\\models\\nllb-200-600m-int8-missing\\tokenizer.json'
+2026-10-31 13:31:45,182 ERROR   vaniscribe: English translation unavailable (attempt 3)
+Traceback (most recent call last):
+  File "C:\Work\Sprint-12\AppAssist\testdata\make_vaniscribe_failure_log.py", line 39, in <module>
+    NllbTranslator(r"C:\VaniScribe\models\nllb-200-600m-int8-missing")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 367, in __init__
+    self.tok = Tokenizer(model_dir)
+               ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Work\Sprint-12\ForVani\ytmp3\nllb.py", line 33, in __init__
+    with open(os.path.join(model_dir, "tokenizer.json"), encoding="utf-8") as fh:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\VaniScribe\\models\\nllb-200-600m-int8-missing\\tokenizer.json'
+2026-10-31 13:31:45,182 INFO    vaniscribe: VaniScribe stopped

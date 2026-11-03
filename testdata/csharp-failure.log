@@ -1,0 +1,13 @@
+2026-11-03 15:09:50.467 INFO  orders: Order report starting for region west
+Unhandled exception. System.ArgumentOutOfRangeException: Orders:BatchSize must be positive (Parameter 'Orders:BatchSize')
+Actual value was -5.
+   at Orders.Program.ReadBatchSize(AppSettings settings) in C:\Work\Sprint-12\AppAssist\testdata\csharp-orders\Program.cs:line 42
+   at Orders.Program.Main(String[] args) in C:\Work\Sprint-12\AppAssist\testdata\csharp-orders\Program.cs:line 32
+2026-11-03 15:09:50.582 INFO  orders: Order report starting for region west
+2026-11-03 15:09:50.603 WARN  orders: Order file not readable, retrying (attempt 1)
+2026-11-03 15:09:50.603 WARN  orders: Order file not readable, retrying (attempt 2)
+2026-11-03 15:09:50.603 ERROR orders: Giving up on region west after 3 attempts
+System.IO.FileNotFoundException: Order file for region west not found
+File name: 'D:/Orders/data\west.orders'
+   at Orders.OrderStore.CountOrders(String region, Int32 batchSize) in C:\Work\Sprint-12\AppAssist\testdata\csharp-orders\OrderStore.cs:line 20
+   at Orders.Program.Run(AppSettings settings, String region, Int32 batchSize) in C:\Work\Sprint-12\AppAssist\testdata\csharp-orders\Program.cs:line 57

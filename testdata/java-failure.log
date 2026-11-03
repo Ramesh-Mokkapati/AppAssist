@@ -1,0 +1,18 @@
+2026-11-03 14:42:58.090 INFO    inventory: Inventory report starting for warehouse north
+Exception in thread "main" java.lang.NumberFormatException: For input string: "fifty"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at com.example.inventory.ConfigLoader.parsePageSize(ConfigLoader.java:40)
+	at com.example.inventory.ConfigLoader.load(ConfigLoader.java:34)
+	at com.example.inventory.InventoryApp.run(InventoryApp.java:45)
+	at com.example.inventory.InventoryApp.main(InventoryApp.java:37)
+2026-11-03 14:42:58.256 INFO    inventory: Inventory report starting for warehouse north
+2026-11-03 14:42:58.290 WARNING inventory: Stock file not readable, retrying (attempt 1)
+2026-11-03 14:42:58.290 WARNING inventory: Stock file not readable, retrying (attempt 2)
+2026-11-03 14:42:58.290 SEVERE  inventory: Giving up on warehouse north after 3 attempts
+java.nio.file.NoSuchFileException: C:\Inventory\stock\north.csv: stock file for warehouse north not found
+	at com.example.inventory.StockRepository.countItems(StockRepository.java:26)
+	at com.example.inventory.InventoryApp.run(InventoryApp.java:59)
+	at com.example.inventory.InventoryApp.main(InventoryApp.java:37)
+

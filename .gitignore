@@ -1,0 +1,51 @@
+# Build output (CMake / Visual Studio)
+build/
+out/
+.vs/
+*.user
+CMakeSettings.json
+CMakeUserPresets.json
+
+# Downloaded dependencies: scripts\fetch_deps.ps1 recreates them
+third_party/llama.cpp/
+third_party/nlohmann/
+
+# Local GGUF models (hundreds of MB to GBs) and interrupted downloads
+models/
+*.gguf
+*.gguf.part
+
+# Generated test artifacts (the scripts and sample logs that create them stay tracked)
+testdata/*.kdb
+testdata/*.tmp
+testdata/last_request.json
+testdata/report-*.txt
+testdata/corrupt.kdb
+testdata/gui-*.png
+testdata/stderr-*.txt
+
+# Build output of the sample apps (dotnet, javac, scalac / sbt / Metals)
+testdata/**/bin/
+testdata/**/obj/
+testdata/**/target/
+testdata/**/project/target/
+*.class
+.bsp/
+.metals/
+.bloop/
+
+# Python
+__pycache__/
+*.pyc
+
+# Crash dumps and temporary files
+*.stackdump
+*.dmp
+*.tmp
+
+# Editors and operating systems
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
